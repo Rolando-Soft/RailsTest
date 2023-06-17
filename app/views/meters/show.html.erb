@@ -1,0 +1,14 @@
+<div class="display-3">Meters Show</div>
+</br>
+<div class="mt-2">
+  <label class="form-label">Meter Serial:</label>
+  <label class="form-control"><%= @meter.serial %></label>
+</div>
+<div class="mt-3">  
+  <label calls="form-label">Tech Id:</label> 
+  <label class="form-control"><%= @meter.techid %></p></label>
+</div>
+<div class="mt-3">
+  <%= link_to "Home", meters_path %>
+  <%= link_to "Edit", edit_meter_path %>
+</div>

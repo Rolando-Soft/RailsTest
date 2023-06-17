@@ -1,0 +1,9 @@
+<div class="display-3">Edit</div>
+
+<%= form_with(model: @meter, url: meter_path) do |f| %>
+  <%= f.label :serial %>
+  <%= f.text_field :serial %>
+  <%= f.label :techid %>
+  <%= f.text_field :techid %>
+  <%= f.submit('Submit') %>
+<% end %>

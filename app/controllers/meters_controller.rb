@@ -18,5 +18,23 @@ class MetersController < ApplicationController
     redirect_to meter_path
   end
   
+  def def new
+    @meter = Equipment.new
+  end
+
+  def create
+    @meter = Equipment.new(equip_params)
+    if @meter.save
+      redirect_to meter_path(@meter)
+    else
+      render 'new'
+    end
+  end
   
+  private
+  
+  def equip_params
+    params.require(:equipment).permit(:serial, :techid)
+  end
+
 end

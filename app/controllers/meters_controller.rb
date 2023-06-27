@@ -18,7 +18,7 @@ class MetersController < ApplicationController
     redirect_to meter_path
   end
   
-  def def new
+  def new
     @meter = Equipment.new
   end
 

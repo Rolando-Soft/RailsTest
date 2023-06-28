@@ -30,6 +30,19 @@ class MetersController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @meter = Equipment.find(params[:id])
+    if @meter.destroy
+      flash[:success] = 'Object was successfully deleted.'
+      redirect_to meters_path
+    else
+      flash[:error] = 'Something went wrong'
+      redirect_to meter_path(@meter)
+    end
+  end
+  
+  
   
   private
   

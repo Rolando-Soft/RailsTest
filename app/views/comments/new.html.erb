@@ -1,0 +1,10 @@
+<p>Enter new comment</p>
+
+<p>Meter Serial: <%= @meter.serial %> </P>
+
+<%= form_with(scope: :comments, url: meter_comments_path(@meter.id)) do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_field :comment, autofocus: true %>
+  
+  <%= f.submit "Submit" %>
+<% end %>

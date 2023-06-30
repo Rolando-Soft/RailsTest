@@ -5,6 +5,7 @@ class MetersController < ApplicationController
 
   def show
     @meter = Equipment.find(params[:id])
+    @comments = @meter.comments
   end
 
   def edit

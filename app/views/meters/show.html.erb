@@ -8,11 +8,19 @@
     <div class="mt-3">  
       <label calls="form-label">Tech Id:</label> 
       <label class="form-control"><%= @meter.techid %></p></label>
-    </div>
+    </div class="mb-3">
 
+    <div class="h4 mt-4">Comentarios</div>
+    <% @meter.comments.each do |c| %>
+      <div class="mb-4">
+        <%= c.comment %>
+      </div>
+    <% end %>
+    
     <div class="mt-3">
       <%= link_to "Home", meters_path %>
       <%= link_to "Edit", edit_meter_path(@meter) %>
+      <%= link_to "Comments", new_meter_comment_path(@meter.id) %>
       <%= link_to "Delete", meter_path(@meter), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
